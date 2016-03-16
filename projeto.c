@@ -25,7 +25,7 @@ void constroiGrafico(){
                     case 0: printf("<"); break;
                     case 1: printf("^"); break;
                     case 2: printf(">"); break;
-                    case 3: printf("y"); break;
+                    case 3: printf("v"); break;
                 }
             } else {
                 printf("%c",labirinto[linha][coluna]);
@@ -138,7 +138,7 @@ struct ratPos pegaPosicaoInicial() {
 	return ret;
 }
 
-void carregaLabirinto(char *filename) {
+int carregaLabirinto(char *filename) {
 /*	#E########
 	#.......C#
 	########.#
@@ -152,7 +152,7 @@ void carregaLabirinto(char *filename) {
 	if(fp == NULL) 
 	{
 		printf("Erro ao abrir arquivo de labirinto.\n");
-		return;
+		return 0;
 	}
 	int line=0;
 	while(fgets(tmp,999,fp)!=NULL) 
@@ -166,7 +166,7 @@ void carregaLabirinto(char *filename) {
 	labX = line;
 	fclose(fp);
 
-	return;
+	return 1;
 }
 
 int retornaZero() {

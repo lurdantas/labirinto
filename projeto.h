@@ -5,7 +5,7 @@ struct ratPos {
 	int decrementando;
 	int barriga;
 };
-void carregaLabirinto();
+int carregaLabirinto();
 struct ratPos pegaPosicaoRato();
 struct ratPos pegaPosicaoInicial();
 void colocaRatoNoInicio();
